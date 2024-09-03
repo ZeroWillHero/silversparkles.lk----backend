@@ -31,7 +31,7 @@ jobs:
       run: |
         echo "${EC2_KEY}" > key.pem
         chmod 400 key.pem
-        ssh -o StrictHostKeyChecking=no -i key.pem ${EC2_USER}@${EC2_HOST} << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${EC2_HOST} << 'EOF'
           cd /home/ubuntu/goldhouse-production/server
           git pull origin main
           # Add commands to restart your application, e.g., using pm2 or systemctl
