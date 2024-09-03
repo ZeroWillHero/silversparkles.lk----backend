@@ -4,7 +4,7 @@ const Wishlist = db.wishlist;
 const addWishlist = async (req, res) => {
     try {
         const { productId } = req.body;
-        const userId = req.user.id; // Assuming user ID is available in req.user
+        const userId = req.body.userId; // Assuming user ID is available in req.user
 
         // Create new wishlist item
         const data ={
