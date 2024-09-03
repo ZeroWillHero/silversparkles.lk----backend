@@ -5,7 +5,7 @@ const Wishlist = db.wishlist;
 const getWishlist = async (req, res) => {
 
     try {
-        const userId = req.user.id; // Assuming user ID is available in req.user
+        const userId = req.body.userId; // Assuming user ID is available in req.user
 
         const wishlistItems = await Wishlist.findAll({
             where: { userId },
