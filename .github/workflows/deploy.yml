@@ -26,7 +26,7 @@ jobs:
     - name: Deploy to EC2
       env:
         EC2_USER: ubuntu
-        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_HOST: ${{ vars.EC2_HOST }}
         EC2_KEY: ${{ secrets.EC2_KEY }}
       run: |
         echo "${EC2_KEY}" > key.pem
