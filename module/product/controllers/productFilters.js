@@ -59,4 +59,4 @@ const filterProducts = async (req, res) => {
     }
 };
 
-module.exports = filterProducts ;
+module.exports = filterProducts;
