@@ -5,7 +5,7 @@ const Product = db.products;
 const filterProducts = async (req, res) => {
     try {
         // Parse query parameters for filtering
-        const { category, priceMin, priceMax, color, metal, stone, gender, iced_product, stock } = req.query;
+        const { category, priceMin, priceMax, color, metal, stone, gender, iced_product, stock,style } = req.query;
         const filterCriteria = {};
 
         if (category) {
@@ -25,7 +25,7 @@ const filterProducts = async (req, res) => {
             };
         }
         if (color) {
-            filterCriteria.color = JSON.parse(color).color;
+            filterCriteria.color = color;
         }
         if (metal) {
             filterCriteria.metal = metal;
@@ -41,6 +41,9 @@ const filterProducts = async (req, res) => {
         }
         if (stock) {
             filterCriteria.stock = stock;
+        }
+        if (style){
+            filterCriteria.style = style;
         }
 
         // Query products based on filter criteria
