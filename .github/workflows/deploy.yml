@@ -28,8 +28,8 @@ jobs:
           cd /home/ubuntu/goldhouse-production/server
           git pull origin main
           if pm2 list | grep -q "index"; then
-            pm2 restart index --update-env -f
+            sudo pm2 restart index --update-env -f
           else
-            pm2 start index.js --name index
+            sudo pm2 start index.js --name index
           fi
         EOF
