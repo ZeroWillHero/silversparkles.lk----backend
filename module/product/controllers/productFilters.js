@@ -24,6 +24,7 @@ const filterProducts = async (req, res) => {
                 [Op.lte]: parseFloat(priceMax)
             };
         }
+        
         if (color) {
             filterCriteria.color = color;
         }

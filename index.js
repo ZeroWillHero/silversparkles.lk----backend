@@ -14,7 +14,7 @@ const auth = require("./middleware/auth")
 
 
 
-const port = 3000;
+const port = 4000;
 const app = express();
 
 // handle cors error
