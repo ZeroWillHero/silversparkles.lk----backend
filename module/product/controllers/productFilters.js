@@ -25,7 +25,7 @@ const filterProducts = async (req, res) => {
             };
         }
         if (color) {
-            filterCriteria.color = color.color;
+            filterCriteria.color = JSON.parse(color).color;
         }
         if (metal) {
             filterCriteria.metal = metal;
