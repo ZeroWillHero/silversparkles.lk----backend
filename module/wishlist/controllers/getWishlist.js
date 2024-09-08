@@ -5,8 +5,8 @@ const Wishlist = db.wishlist;
 const getWishlist = async (req, res) => {
 
     try {
-        const userId = req.body.userId; // Assuming user ID is available in req.user
-
+        const userId = req.params.userId; // Assuming user ID is available in req.user
+        console.log(userId);
         const wishlistItems = await Wishlist.findAll({
             where: { userId },
             include: db.products
