@@ -24,9 +24,13 @@ const filterProducts = async (req, res) => {
                 [Op.lte]: parseFloat(priceMax)
             };
         }
-        
+
         if (color) {
-            filterCriteria.color = color;
+            // filterCriteria.color = color.color;
+            const colorArray = JSON.parse(color);
+            filterCriteria.color = {
+                [Op.or]: parse [colorArray.color]
+            };
         }
         if (metal) {
             filterCriteria.metal = metal;
