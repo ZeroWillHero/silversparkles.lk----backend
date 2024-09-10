@@ -3,6 +3,14 @@ const Wishlist = db.wishlist;
 
 const addWishlist = async (req, res) => {
     try {
+        const existProduct = await Wishlist.findOne({
+            where : {
+                userId : req.body.userId,
+                productId : req.body.productId
+            }
+        });
+
+
         const { productId } = req.body;
         const userId = req.body.userId; // Assuming user ID is available in req.user
 
