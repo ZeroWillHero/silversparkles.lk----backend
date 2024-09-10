@@ -11,7 +11,7 @@ const clearWishlist = require("./controllers/allClear");
 router.use(middleware);
 router.post('/add', addWishlistItem);
 router.get('/all/:userId', getWishlistItems);
-router.delete('/removeitem', removeWishlistItem);
+router.delete('/removeitem/:id', removeWishlistItem);
 router.delete('/clear', clearWishlist);
 
 // export router 
