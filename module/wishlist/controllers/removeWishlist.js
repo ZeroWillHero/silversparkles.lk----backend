@@ -3,12 +3,13 @@ const Wishlist = db.wishlist;
 
 const removeWishlistItem = async (req, res) => {
     try {
-        const { itemId } = req.params.id;
+        const { id } = req.params;
+        // console.log(itemId)
 
         // Find the Wishlist item by its ID and delete it
         const deletedWishlistItem = await Wishlist.destroy({
             where: {
-                id: itemId
+                id: id
             }
         });
 
