@@ -8,7 +8,7 @@ const removeWishlistItem = async (req, res) => {
         // Find the Wishlist item by its ID and delete it
         const deletedWishlistItem = await Wishlist.destroy({
             where: {
-                id: id
+                id: itemId
             }
         });
 
