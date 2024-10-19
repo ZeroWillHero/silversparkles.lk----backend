@@ -17,6 +17,13 @@ const auth = require("./middleware/auth")
 
 const port = 4000;
 const app = express();
+
+var corsOptions = {
+    origin: 'https://silverhttps://silversparkles-admin.netlify.app/',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
+
 app.use(cors());
 
 // handle cors error
