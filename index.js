@@ -19,7 +19,6 @@ const port = 4000;
 const app = express();
 
 // handle cors error
-app.use(cors())
 app.use('/uploads', express.static('uploads'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -28,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/x-www-form-urlencoded
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 
 
