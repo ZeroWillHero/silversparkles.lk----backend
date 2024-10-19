@@ -18,11 +18,7 @@ const auth = require("./middleware/auth")
 const port = 4000;
 const app = express();
 
-app.use(cors(
-    {
-        origin: "https://silversparkles-admin.netlify.app/",
-    }
-));
+app.use(cors());
 
 // handle cors error
 app.use('/uploads', express.static('uploads'));
