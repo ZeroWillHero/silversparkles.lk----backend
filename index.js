@@ -10,11 +10,12 @@ const cartRoutes = require("./module/cart/cart.routes")
 const orderRoutes = require("./module/order/order.routes")
 const medaiRoutes = require("./module/media/media.routes");
 const reviewRoutes = require("./module/review/review.routes");
+const collabs = require('./module/collabs/collabs.routes');
 const auth = require("./middleware/auth")
 
 
 
-const port = 4000;
+const port = 5000;
 const app = express();
 
 // handle cors error
@@ -29,18 +30,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
-
-// mongoose.connect(process.env.MONGO_DB_URL, {}).then(() => {
-//     console.log("Database connection succesfuly");
-// }).catch((err) => {
-//     console.log(err);
-// })
-
-// // mongoose.model("User", userSchema)
-// require("./model/userModel")
-// require("./model/productModel")
-
 // Main route
 app.use("/api/user", userRoutes)
 app.use("/api/product", productRoutes)
@@ -49,6 +38,7 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/order",orderRoutes)
 app.use("/api/media",medaiRoutes)
 app.use("/api/review",reviewRoutes)
+app.use("/api/collabs",collabs);
 
 // check is authorized 
 app.get ("/api/check/auth",auth,(req,res)=>{
