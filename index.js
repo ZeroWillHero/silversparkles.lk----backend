@@ -17,6 +17,7 @@ const auth = require("./middleware/auth")
 
 const port = 4000;
 const app = express();
+app.use(cors());
 
 // handle cors error
 app.use('/uploads', express.static('uploads'));
@@ -27,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/x-www-form-urlencoded
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
 
 
 
