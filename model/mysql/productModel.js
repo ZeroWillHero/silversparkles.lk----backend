@@ -27,23 +27,23 @@ module.exports = (sequelize, DataTypes) => {
         },
         weight: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         length: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         width: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         ring_size: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         color: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         stone: {
             type: DataTypes.ENUM('natural-diamonds', 'american-diamonds'),
@@ -59,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         style: {
             type: DataTypes.ENUM('Cuban', 'Tennis', 'Figaro', 'Rope', 'Palm', 'Our Exclusive'),
-            allowNull: false
+            allowNull: true
         },
         review: {
             type: DataTypes.TEXT,
