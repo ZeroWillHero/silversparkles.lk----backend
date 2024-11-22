@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         ring_size: {
             type: DataTypes.TEXT,
+            allowNull: true
             
         },
         color: {
