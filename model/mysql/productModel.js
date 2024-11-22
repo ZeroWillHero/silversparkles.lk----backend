@@ -27,23 +27,23 @@ module.exports = (sequelize, DataTypes) => {
         },
         weight: {
             type: DataTypes.TEXT,
-            allowNull: true
+           
         },
         length: {
             type: DataTypes.TEXT,
-            allowNull: true
+            
         },
         width: {
             type: DataTypes.TEXT,
-            allowNull: true
+            
         },
         ring_size: {
             type: DataTypes.TEXT,
-            allowNull: true
+            
         },
         color: {
             type: DataTypes.TEXT,
-            allowNull: true
+            
         },
         stone: {
             type: DataTypes.ENUM('natural-diamonds', 'american-diamonds'),
