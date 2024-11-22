@@ -105,7 +105,7 @@ const addProducts = async (req, res) => {
         //console.log("length1", length1)
 
         // Check if all required fields are present
-        const requiredFields = ['title', 'category', 'price', 'description', 'stock', 'metal', 'weight', 'length', 'width', 'color', 'stone', 'gender', 'style', 'ring_size'];
+        const requiredFields = ['title', 'category', 'price', 'description', 'stock',  'stone', 'gender', 'style','metal'];
         const missingFields = requiredFields.filter(field => !req.body[field]);
 
         if (missingFields.length > 0) {
