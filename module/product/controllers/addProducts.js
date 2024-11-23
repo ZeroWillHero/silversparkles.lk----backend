@@ -65,9 +65,7 @@ const addProducts = async (req, res) => {
         stock,
         metal,
         weight,
-        length,
         width,
-        color,
         stone,
         gender,
         iced_product,
@@ -85,20 +83,31 @@ const addProducts = async (req, res) => {
         //     };
         // });
 
+        let color1 = [];
+        let length1 = [];
+        let ring_size = '';
+
+        if (req.body.ring_size){
+            ring_size = req.body.ring_size;
+        }
 
 
+        if (req.body.length) {
+            length1 = length.map(len => {
+                return {
+                    length: len
+                }
+            })
+        }
 
-        const length1 = length.map(len => {
-            return {
-                length: len
-            }
-        })
+        if (req.body.color) {
+            color1 = color.map(co => {
+                return {
+                    color: co
+                }
+            })
 
-        const color1 = color.map(co => {
-            return {
-                color: co
-            }
-        })
+        }
 
         console.log("color", color1)
 
@@ -137,7 +146,7 @@ const addProducts = async (req, res) => {
             weight,
             length: JSON.stringify(length1),
             width,
-            ring_size,
+            ring_size : ring_size,
             color: JSON.stringify(color1),
             stone,
             images: JSON.stringify(images), // Store image paths as JSON string in the database
